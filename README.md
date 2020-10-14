@@ -1,4 +1,13 @@
+## React Dashboard Demo
+
+A simple dashboard layout using Chart.js fed with fake/dummy data points.
+
+
+Adapted from [Create with Data](https://www.createwithdata.com/react-chartjs-dashboard/)
+              
+__________________________________________________________________            
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
