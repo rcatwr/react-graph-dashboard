@@ -1,9 +1,11 @@
 ## React Dashboard Demo
 
+A simple data dashboard layout using React and Chart.js
+
 ![Dash Screenshot](https://github.com/rcatwr/react-graph-dashboard/blob/master/src/images/screenshot-50p.png?raw=true "Graph Dashboard screenshot")
 
 
-Adapted from [Create with Data](https://www.createwithdata.com/react-chartjs-dashboard/)
+Adapted from a blog post by: [Create with Data](https://www.createwithdata.com/react-chartjs-dashboard/)
               
 __________________________________________________________________            
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
