@@ -1,6 +1,5 @@
 import React, { Component, createRef } from 'react';
 import Chart from 'chart.js';
-import { findAllByTitle } from '@testing-library/react';
 
 
 class LineChart3 extends Component {
@@ -26,14 +25,15 @@ class LineChart3 extends Component {
             options: {
                 legend:{
                     labels:{
-                        fontColor:'white'
+                        fontColor:'black'
                     }
                 },
-                maintainAspectRatio: false,
+                responsive: true,
+                maintainAspectRatio: true,
                 scales: {
                     xAxes: [
                         {   gridLines:{
-                            color:'rgba(255,255,255, 0.1)'
+                            color:'rgba(0,0,0, 0.1)'
                           },
                             type: 'time',
                             time: {
@@ -43,7 +43,7 @@ class LineChart3 extends Component {
                     ],
                     yAxes: [
                         {gridLines:{
-                            color:'rgba(255,255,255, 0.1)'
+                            color:'rgba(0,0,0, 0.1)'
                           },
                             ticks: {
                                 min: 0
