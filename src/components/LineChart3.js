@@ -6,7 +6,7 @@ class LineChart3 extends Component {
     constructor(){
         super();
         this.chartRef = React.createRef();
-        
+
     }
    componentDidUpdate() {
        const {data} = this.props;
@@ -19,7 +19,7 @@ class LineChart3 extends Component {
 
     componentDidMount() {
         const {data, timescale, title1, title2, title3, color1, color2, color3} = this.props;
-       
+
         this.myChart = new Chart(this.chartRef.current,{
             type: 'line',
             options: {
@@ -38,6 +38,7 @@ class LineChart3 extends Component {
                             type: 'time',
                             time: {
                                 unit: timescale,
+                                stepSize: 15,
                             }
                         }
                     ],

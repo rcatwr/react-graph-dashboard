@@ -16,17 +16,17 @@ const getRandomDateArray = (numItems, day, max) => {
   let unshaved = 0;
   let shaved = 0;
   let target = 0;
-  let capacity = 40;
-  let charge = 40;
+  let capacity = 625;
+  let charge = 625;
   const data = [];
   for (let i = 0; i < numItems; i++) {
     // Calculate demand.
-    let demand = Math.round(20 * Math.random() + max * Math.random()**10);
+    let demand = Math.round(100 * Math.random() + max * Math.random()**10);
     if (demand > unshaved) {
       unshaved = demand;
     }
-    
-    // Charge the battery. 
+
+    // Charge the battery.
     if (demand <= target) {
       charge += Math.max(target - demand, 20);
       shaved = target;
@@ -46,7 +46,7 @@ const getRandomDateArray = (numItems, day, max) => {
       time: new Date(baseTime + i * t_15m),
       demand: demand,
       unshaved: unshaved,
-      target: target 
+      target: target
     });
   }
 
@@ -60,22 +60,31 @@ const getMonthlyPerformance = (dataIn) => {
   for (let i = 0; i < dataIn.length; i++) {
     let pt = dataIn[i];
     let last = pt[pt.length - 1];
-    unshaved = Math.max(unshaved, last.unshaved);
-    target = Math.max(target, last.target);
+    target = Math.min(Math.max(target, last.target), 687);
+    unshaved = Math.min(Math.max(unshaved, last.unshaved), target + 603);
     data.push({
       time: last.time,
       unshaved: unshaved,
-      target: target 
+      target: target
     });
   }
-  
+
   return data;
 };
 
 export default () => {
   let demand = []
   for (let i = 0; i < 30; i++) {
-    demand.push(getRandomDateArray(60 * 24 / 15, i, 150 * Math.random()));
+    demand.push(getRandomDateArray(60 * 24 / 15, i, 1050 * Math.random()));
+  }
+
+  let oneMonth = getRandomDateArray(60 * 24 / 15, 29, 1050 * Math.random());
+  while (true) {
+    oneMonth = getRandomDateArray(60 * 24 / 15, 29, 950 * Math.random());
+    let pt = oneMonth[oneMonth.length - 1];
+    if (pt.unshaved > 600 && pt.target > 200 && pt.target < pt.unshaved * 0.75) {
+      break;
+    }
   }
 
   return [
@@ -83,11 +92,11 @@ export default () => {
       title1: "Demand (kW)",
       title2: "Unshaved Peak (kW)",
       title3: "Shaved Peak (kw)",
-      data: demand[29]
+      data: oneMonth,
     },
     {
       title1: "Unshaved Peak (kW)",
-      title2: "Unshaved Peak (kW)",
+      title2: "Shaved Peak (kW)",
       title3: "Shaved Peak (kw)",
       data: getMonthlyPerformance(demand)
     },

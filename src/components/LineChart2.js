@@ -5,19 +5,19 @@ class LineChart2 extends Component {
     constructor(){
         super();
         this.chartRef = React.createRef();
-        
+
     }
    componentDidUpdate() {
        const {data} = this.props;
        this.myChart.data.labels = data.map(d => d.time);
        this.myChart.data.datasets[0].data = data.map(d => d.unshaved)
        this.myChart.data.datasets[1].data = data.map(d => d.target)
-       this.myChart.update();
+       //this.myChart.update();
    }
 
     componentDidMount() {
         const {data, timescale, title1, title2, color1, color2} = this.props;
-       
+
         this.myChart = new Chart(this.chartRef.current,{
             type: 'line',
             options: {

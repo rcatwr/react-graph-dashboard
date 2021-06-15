@@ -26,7 +26,7 @@ class App extends Component {
       this.setState({
         feeds: data(),
       });
-    }, 5000);
+    }, 30000);
   }
 
   render() {
@@ -43,7 +43,7 @@ class App extends Component {
             <Nav.Link>Support</Nav.Link>
           </Nav>
           <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>Customer Portal v1.0</Navbar.Text>
+            <Navbar.Text>June 15, 2021 | 06:18:32 AM (UTC-7)</Navbar.Text>
           </Navbar.Collapse>
         </Navbar>
         <Row>
@@ -59,21 +59,21 @@ class App extends Component {
                     <Nav.Link eventKey="first">
                       <b>Site 1</b>
                       <br/>
-                      304 W. 3rd Ave., Los Angeles, CA 90018
+		                3410 W 3rd St., Los Angeles, CA 90020
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="second">
                       <b>Site 2</b>
                       <br/>
-                      1234 Hello World Lane, Phoenix, AZ 90356
+		                3400 W Magnolia Blvd., Burbank, CA 91505
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="third">
                       <b>Site 3</b>
                       <br/>
-                      1234 Goodbye World Road, Seattle, WA 98133
+		                3100 Baldwin Park Blvd., Baldwin Park, CA 91706
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>
@@ -113,26 +113,56 @@ class App extends Component {
             <Row>
               <p/>
             </Row>
+
+            <Row>
+              <p/>
+            </Row>
+
             <Row className="justify-content-center">
-              <Card style={{ width: '30rem' }}>
+              <h4>12-Month PowerNode Savings</h4>
+            </Row>
+            <Row>
+              <Table striped border>
+                <thead>
+                  <tr>
+                    <th>Capability</th>
+                    <th>Amount Saved ($)</th>
+                    <th>Click for Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="align-middle">Peak Shaving</th>
+                    <th class="align-middle">$42,481.86</th>
+                    <th><Button variant="info">Details</Button></th>
+                  </tr>
+                  <tr>
+                    <th class="align-middle">Grid Services Profit</th>
+                    <th class="align-middle">$18,034.80</th>
+                    <th><Button variant="info">Details</Button></th>
+                  </tr>
+                </tbody>
+              </Table>
+            </Row>
+
+            <Row>
+              <p/>
+            </Row>
+
+            <Row className="justify-content-center">
+              <h4>Site Controls</h4>
+            </Row>
+            <Row className="justify-content-center">
+              <Card style={{ width: '25rem' }}>
                 <Card.Body>
                   <Card.Title>Operational Control</Card.Title>
                   <Card.Text>
-                    Use this to enable/disable the BESS automated operation to service the site.
+                    Use this to enable/disable the PowerNode automated operation to service the site.
                   </Card.Text>
-                  <Button variant="primary">Disable BESS</Button>
+                  <Button variant="primary">Disable PowerNode</Button>
                 </Card.Body>
               </Card>
-              <Card style={{ width: '30rem' }}>
-                <Card.Body>
-                  <Card.Title>Automatic Updates</Card.Title>
-                  <Card.Text>
-                    You have authorized automatic software updates during the maintenance window. Use this to disable this feature.
-                  </Card.Text>
-                  <Button variant="primary">Disable Auto-Update</Button>
-                </Card.Body>
-              </Card>
-              <Card style={{ width: '30rem' }}>
+              <Card style={{ width: '25rem' }}>
                 <Card.Body>
                   <Card.Title>Maintenance Window</Card.Title>
                   <Card.Text>
@@ -142,43 +172,7 @@ class App extends Component {
                 </Card.Body>
               </Card>
             </Row>
-            <Row>
-              <p/>
-            </Row>
-            <Row>
-              <p/>
-            </Row>
-            <Row className="justify-content-center">
-              <h4>Year-to-Date BESS Savings</h4>
-            </Row>
-            <Row>
-              <Table striped border>
-                <thead>
-                  <tr>
-                    <th>Capability</th>
-                    <th>Amount Saved ($)</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th class="align-middle">Peak Shaving</th>
-                    <th class="align-middle">$3540.16</th>
-                    <th><Button variant="info">Details</Button></th>
-                  </tr>
-                  <tr>
-                    <th class="align-middle">Infrastructure Avoidance</th>
-                    <th class="align-middle">$980.22</th>
-                    <th><Button variant="info">Details</Button></th>
-                  </tr>
-                  <tr>
-                    <th class="align-middle">Wholesale Energy Bidding</th>
-                    <th class="align-middle">$145.60</th>
-                    <th><Button variant="info">Details</Button></th>
-                  </tr>
-                </tbody>
-              </Table>
-            </Row>
+
           </Col>
         </Row>
       </Container>
